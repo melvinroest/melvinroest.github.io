@@ -1,0 +1,77 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="custom.css">
+
+  <noscript>
+    <link rel="stylesheet" type="text/css" href="noscript.css">
+  </noscript>
+</head>
+<body>
+  
+  <h1>About Melvin Roest</h1>
+  <p>
+    <em>In a mere two hours, Melvin was productive in the codebase I worked on.</em> ~ <a target="_blank" href="https://www.linkedin.com/in/timothytjen/">Timothy Tjen Alooi (Full Stack Developer)</a>
+  </p>
+  <p>
+    <em>Melvin is crazy in a positive sense.</em> ~ <a target="_blank" href="https://www.cs.vu.nl/~eliens/">Prof. Dr. Anton Eliëns</a> (warning confusing website ahead!)
+  </p>
+  <p>
+    <em>Melvin inspires people to accelerate their education.</em> ~  <a href="http://www.advalvas.vu.nl/tips-trucs/doe-de-dubbele-master" target="_blank">The University Newspaper - Ad Valvas</a>
+  </p>
+  
+  <h1>Portfolio Highlights</h1>
+	<p>At university I gained experience in (Game, Web &amp; App) <a class="toggle_no_script" href="#dev" onclick="switchActive(this, event)">Development <span class="guillemet">»</span></a>, <a class="toggle_no_script" href="#edu" onclick="switchActive(this, event)">Education <span class="guillemet">»</span></a> and <a class="toggle_no_script" href="#psy" onclick="switchActive(this, event)">Psychology <span class="guillemet">»</span></a>. For work related experience, see my <a target="_blank" href="https://www.linkedin.com/in/melvinroest">LinkedIn</a>.
+
+  </p>
+  <div id="dev" class="hidden">
+  <h2>Development</h2>
+    <ul>
+      <li>I wrote my thesis on hypermedia in 2018 (<a target="_blank" href="ximpel">Link</a>)</li>
+      <li>Check out my home grown computer graphics engine! (<a target="_blank" href="https://www.youtube.com/watch?v=PH6-dLvZEiA">YouTube</a>, 2 min.)</li>
+      <li>Understand the science behind sentiment analysis on Twitter (<a target="_blank" href="articles/sentiment.pdf">PDF</a>)</li>
+      <li><a target="_blank" href="https://www.github.com/melvinroest">Github</a> is where my code eats, sleeps and contemplates 🙏</li>
+    </ul>
+  </div>
+  <div id="edu" class="hidden">
+    <h2>Education</h2>
+    <ul>
+      <li>I wrote my thesis on hypermedia (combined with education) (<a target="_blank" href="ximpel">Link</a>)</li>
+      <li>I worked as a teaching assistant, teaching fellow and part-time lecturer at both universities in Amsterdam.</li>
+      <li>I performed experiments on accelerating my own education. My biggest success has been attaining a bachelor degree in 2 years. In total, I studied for 8 years in time, obtained about 10.5 years worth of subjects. I have diploma's for 9 years (+ cum laude &amp; honors) and have 2 years of full-time work experience and have been active as a board member of 3 student organizations (ESN, Ace Connect and Techclub). With a simple tweak I could have done this in 6 years, provided I knew the results of my final big experiment.
+    </ul>
+  </div>
+
+  <div id="psy" class="hidden">
+    <h2>Psychology articles written by me</h2>
+    <ul>
+      <li>I wrote my thesis on hypermedia (and frustration detection) (<a target="_blank" href="ximpel">Link</a>)</li>
+      <li>I wrote an article about the science behind intuition (<a target="_blank" href="articles/intuition.pdf">PDF</a>)</li>
+      <li>I wrote an article about the science behind frustrated gamers (<a target="_blank" href="articles/frustration.pdf">PDF</a>)</li>
+    </ul>
+  </div>
+
+  <h1>Let's have a chat</h1>
+  <p>To prevent automated bots from chasing me across the interwebs I made a riddle about my email address. My email provider is gmail.com</p>
+  <p>
+  Here is the riddle: [first name][last name][at][email provider]
+  </p>
+
+  <script>
+    function switchActive(target, event){
+      var elements = document.getElementsByClassName("hidden");
+      var length = elements.length;
+      for (var i = 0; i < length; i++) {
+        var element = elements[i];
+        var linkId = target.href.split("#")[1];
+        if (element.classList && linkId === element.id) {
+          element.classList.add("active");
+        }
+        else if(element.classList.contains("active")){
+          element.classList.remove("active");
+        }
+      }
+      event.preventDefault();
+    }
+  </script>
+</body>
+</html>

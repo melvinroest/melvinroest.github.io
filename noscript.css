@@ -1,0 +1,10 @@
+.hidden {
+  display: block;
+}
+
+a.toggle_no_script {
+  pointer-events: inherit;
+  cursor: text;
+  text-decoration: none;
+  color: black;
+}

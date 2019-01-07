@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<title>XIMPEL - Documentation</title>
+
+		<!-- include syntax highlighter -->
+		<script type="text/javascript" src="syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+		<link href="syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet" type="text/css" />
+		<link type="text/css" rel="stylesheet" href="syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+
+		<!-- include jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+		<!-- include jquery ui -->
+		<link rel="stylesheet" href="jquery-ui-1.11.4/jquery-ui.min.css" />
+		<script src="jquery-ui-1.11.4/jquery-ui.min.js"></script>
+		
+		<!-- include scripts/css for this documentation page. -->
+		<link rel="stylesheet" href="styles/main.css" />
+		<script src="scripts/main.js"></script>
+		<script type="text/javascript">
+			//
+			var activeSection=1;
+		</script>
+
+	</head>
+	<body>
+		<div id="container">
+			<script src="scripts/header.js"></script>
+			<script src="scripts/navigation.js"></script>
+
+			<div id="mainContentContainer">
+				<div id="mainContent">
+					<h2>Syntax - Picture mediatype</h2>
+					The image media type allows you to show images within your ximpel presentation.
+
+					<h4>playlist.xml</h4>
+					<pre class="brush: html;">
+						&lt;ximpel&gt;
+							&lt;playlist&gt;
+							    &lt;subject&gt;
+							        &lt;media&gt;
+										&lt;image src=&quot;demo.png&quot; /&gt;
+							        &lt;/media&gt;
+							    &lt;/subject&gt;
+							&lt;/playlist&gt;
+						&lt;/ximpel&gt;</pre>
+					<p>
+						The <code>src</code> attribute specifies the filename of the image that is to be played.
+					</p>						
+					<br />
+
+
+
+
+					<h3>Positioning of the image</h3>
+					<p>
+						The <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> attributes can be used to position the image at a certain spot within the presentation and force it to have certain dimensions. If you don't set any of these attributes then the image expands as large as possible such that it covers up the entire width and/or height while maintaining aspect ratio.
+					</p>
+
+					<pre class="brush: html;">
+						&lt;image src=&quot;demo.png&quot; x=&quot;200px&quot; y=&quot;200px&quot; width=&quot;400px&quot; height=&quot;400px&quot; /&gt;</pre>
+
+					<p>
+					 	By setting the <code>x</code> and/or <code>y</code> attributes, the image will have an offset from the top-left of the view area. Using the x and y offsets do not change the default width and height used for the image (ie. the width/height is such that it expands to fill the view-area while maintaining the aspect ratio). This may cause the image to fall partly outside the view-area. Usually you want to provide width/height attributes when using x and y offsets. By specifying the <code>width</code> and/or <code>height</code> attributes you can change the width and height that the image will have.
+					</p>
+					<p>
+						<div class="ui-widget">	<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+							<span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+							The <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> of the image are all based on a <code>1920x1080</code> resolution. So the visible area of the presentation lies between <code>x=0</code> to <code>x=1920</code> and <code>y=0</code> to <code>y=1080</code>. Read more about the native XIMPEL resolution <a href="architecture_resolution.htm">here</a>.
+						</div></div>
+					</p>
+					<br />
+
+
+
+					<h3>Playing the image for a limited time</h3>
+					<p>
+						By default, the image is played indefinitely and would require some user interaction (clicking an overlay for example) to jump to a different part of the presentation. However, the <code>duration</code> attribute is available for every media type and can be used to limit the play time of the image. It specifies the number of seconds the image should play.
+					</p>
+					<h4>This image will play for 5 seconds</h4>
+					<pre class="brush: html;">&lt;image src=&quot;demo.png&quot; duration="5" /&gt;</pre>
+					<br /><br />				
+					
+					
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

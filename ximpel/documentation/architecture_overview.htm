@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>XIMPEL - Documentation</title>
+
+		<!-- include syntax highlighter -->
+		<script type="text/javascript" src="syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+		<link href="syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet" type="text/css" />
+		<link type="text/css" rel="stylesheet" href="syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+
+		<!-- include jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+		<!-- include jquery ui -->
+		<link rel="stylesheet" href="jquery-ui-1.11.4/jquery-ui.min.css" />
+		<script src="jquery-ui-1.11.4/jquery-ui.min.js"></script>
+		
+		<!-- include scripts/css for this documentation page. -->
+		<link rel="stylesheet" href="styles/main.css" />
+		<script src="scripts/main.js"></script>
+		<script type="text/javascript">
+			//
+			var activeSection=0;
+		</script>
+
+	</head>
+	<body>
+		<div id="container">
+			<script src="scripts/header.js"></script>
+			<script src="scripts/navigation.js"></script>
+
+			<div id="mainContentContainer">
+				<div id="mainContent">
+					<h2>Architecture - Overview</h2>
+
+					<p>The architecture of XIMPEL is as follows:</p>
+					
+					<img src="figures/ximpel_architecture.png" alt="XIMPEL architecture"/>
+
+					<p>The XIMPEL web application consists of ximpel.js, with the main application code, and it utilizes jquery.js for some of its functions. Optionally, for touch support, the hammer.js library can be included.</p>
+					
+					<p>The content of a XIMPEL application is specified via two XML files: playlist.xml (specifying the content and interaction) and config.xml (specifying application settings).</p>
+					
+					<p>In the playlist, it is possible to define overlays (for interaction), scores and quizzes, and to use a variety of built-in media types. It is also possible to create new, custom, media types.<p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
