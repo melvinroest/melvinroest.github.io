@@ -1,0 +1,181 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="custom.css">
+  <style>
+  code { 
+    background: hsl(220, 80%, 90%); 
+  }
+
+  pre {
+      white-space: pre-wrap;
+      background: hsl(220, 80%, 90%);
+  }
+  </style>
+  <noscript>
+    <link rel="stylesheet" type="text/css" href="noscript.css">
+  </noscript>
+</head>
+<body>
+  
+  <h1>The chronology of Doodle Docs</h1>
+  <h2>Brainstorming + Planning (1 hour)</h2>
+  <p>Code challenge that is required to be done with Ember.js and RoR &rarr; didn't look interesting enough &rarr; brainstorming &rarr; what if Facebook was purely on pencil and only iPad Pro users were allowed? &rarr; how to simplify the coolness of this? &rarr; pressure sensitive web app &rarr; multi-user pressure sensitive web app &rarr; multi-user pressure sensitive web app + Google Docs &rarr; DoodleDocs</p>
+  <p>By now I put my Toggle timer on.</p>
+  <p>Mindmap: feature disambiguation &rarr; plan creation + philosophy of project.</p>
+  <p>The philosophy is threefold: (1) doing a code challenge, (2) learning RoR and Ember.js and (3) experimenting with Canvas and the pressure sensitive stylus of the iPad pro.</p>
+  <h2>Design (2 hours in a car as passenger with only an iPad)</h2>
+  <p>I didn't want to lose momentum, so I decided to design the whole thing on an ipad. I'd have loved to use Sketch, but I do think this gave a quicker impression in the end on what I want and raised some new questions and clarified the project scope.</p>
+  <p>I doodled the following. I realized that trying to doodle as much as possible, helps me to eat my own dogfood in this particular case, since doodling is *all you can do*.</p>
+  <p>The layout on the left and critiqued, comments on the right after the black line. During the car trip, I really had issues with buttons such as: save, new and new with current drawing and am still wondering on how to beautifully abstract them away. One way of doing it for saving is to implement an auto-save feature. I also realized that I'd need to create a status bar or messaging div somewhere.</p>
+  <p>Upon writing this, I realize I should take cues on how Apple did it. Apple Notes divided options into 4 corners: the folder structure to which a note belongs (upper left); the management regarding deleting, sharing, creating a new note, or sharing the note (upper right); the drawing pallet, typing options and attachment options (lower right); and the undo + redo buttons (lower left).</p>
+  <p>Moreover, I discovered you can kind of already do what I want my web app to do via Apple Notes, albeit it's not quite performant, but it is way better than a paper prototype.</p>
+  <img src="img/doodledocs/layout_sketch.png" style="width: 900px; height: 600px" />
+  <p>The use cases, and demarcating what would become the MVP and what would become the MVP for launching it on sites such as Product Hunt and Hacker News.</p>
+  <img src="img/doodledocs/usecases.png" style="height: 700px" />
+  <h2>Reading EmberJS guides and revising my plan (4 hours)</h2>
+  <p>In true fashion with the paper and pen approach, I read the docs while annotating them. Then I mind mapped the summaries, so I got a true good grasp of the concepts. It helps that I have had experience with Cocoa Touch and ReactJS in the past, because it made it a lot easier to understand EmberJS right out of the gate. Here are some select screenshots on how it looked like.</p>
+  <p>How doodling around the code helped me with reading comprehension:</p>
+  <img src="img/doodledocs/annotate1.png" style="width: 900px; height: 600px" />
+  <p>This was a summary of a particular section:</p>
+  <img src="img/doodledocs/annotate2.png" style="width: 900px; height: 600px" />
+  <p>I read getting started and until building a complex component in the tutorial. I feel I have enough info to get started with my first challenges. I also critiqued the first parts of my plan. I learned that learning everything all at once is not the best way as it negates some much needed practical experience with more bite-sized components.</p>
+  <img src="img/doodledocs/revisedplan1.jpg" style="width: 900px; height: 600px" />
+  <h2>Productive procrastination (1)</h2>
+  <p>I'm experimenting with productive wind-down patterns. I know I need to wind down, but I don't want to watch YouTube or play games for 2 hours straight. So instead of methodically tackling my project, I simply poke around without thinking too much about it. I don't record the time for these sessions. In this particular case, I've learned about a couple of things:</p>
+  <ul>
+    <li>My idea is old, creating a canvas drawing app is like 8 years old.</li>
+    <li>Canvas does not support any form of pressure sensitivity?</li>
+    <li>Since I want to stay simple, I should refrain from using libraries.</li>
+    <li>Browsersync</li>
+    <li>There are a lot of competitors, but no one with my feature set. Inko is really cool though.</li>
+    <li>https://news.ycombinator.com/item?id=17428667 -- this is the HN launch on Inko. There clearly is demand in the HN crowd.</li>
+    <li>I might need to look into P2P algorithms and CRDTs again, just like the GoodNotes code challenge.</li>
+    <li>Inko has 200,000 users after one month</li>
+    <li>https://news.ycombinator.com/item?id=18551874 -- wbo, launch was even more successful. Only 10 months ago, I think I'm on to something.</li>
+    <li>Loading images would be awesome, but should be done for a beta or second beta launch.</li>
+    <li>https://www.youtube.com/watch?v=i6eP1Lw4gZk&app=desktop -- examples on how to create this, they use web sockets. Apparently creators of similar apps use a host/client-based architecture.</li>
+    <li>https://github.com/lovasoa/whitebophir</li>
+    <li>SO IT IS POSSIBLE TO HAVE SOMETHING PRESSURE SENSITIVE! -- https://github.com/quietshu/apple-pencil-safari-api-test/blob/gh-pages/index.html</li>
+  </ul>
+  <p>Why hasn't this been done before in the way I envisioned it? Cross-browser compatibility issues? They might arise, but it's partially rendered moot since devices are only going to pressure sensitive styluses in 2018/2019. I'm a bit flabbergasted that there is no drawing/collaboration app that does this. Well, I have now seen it's possible, it all uses Canvas, and I have an idea about the architecture.</p>
+  <p>Let's go to bed, and proceed with my plan tomorrow. This was quite a productive form of procrastination.</p>
+
+  <h2>Implementing the Opera tutorial and adapting it (1 hour + 15 min.)</h2>
+  <p>This took me 1 hour and 15 minutes. It was fairly straightforward. Copy/pasting would make it quicker, but I was reading it with the intention to understand, as these prototypes that I'm making are meant for me to get a better understanding. I added an eraser. See <a target="_blank" href="https://dev.opera.com/articles/html5-canvas-painting/">the tutorial</a>.</p>
+
+  <h2>Implementing client-side pencil-based drawing (no pressure sensitivity, 3 hours + 45 min.)</h2>
+  <p>The first thing that I did was install browsersync and set it up. While I still cannot remote debug (I had hoped that I could), I am now able to quickly test my app on the iPad, which was very badly needed :)</p>
+  <p>After that, I decided to use pressureJS because I need it later on for the pressure. I was a bit puzzled on how to continue since its API looked to be a 180 degree change compared to the Opera dev tutorial. By sketching both function calls out by reading the PressureJS source, I finally realized how to combine the 2 libraries. It took a while.</p>
+  <p>There were 2 wonky issues: pointer events for the mouse are weird, the movepointer (or whatever its name is) does not have the right pressure and pointerdown does not have the right coordinates. It took me an hour (or two, I didn't check) to figure that out. Furthermore, scroll-locking on the iPad was a pain. I wanted to implement it myself, but I used a library instead, because it was not as easy as a few lines of JS or a few lines of CSS.</p>
+  <p>This is the result :D</p>
+  <img src="img/doodledocs/stylus-example.jpg" style="width: 500px; height: 700px" />
+  <h2>Line thickness and saving feasibility (1 hour and 30 min.)</h2>
+  <p>This went relatively quick as I found an algorithm (and have an idea about a class of algorithms) on how to influence line thickness directly. The ability to clone a canvas was quickly proven as well by a stackoverflow answer. Now I need to put this stuff into EmberJS</p>
+  <h2>Creating this app with EmberJS (didn't track hours, maybe 1 or 2?)</h2>
+  <p>I ran into a huge wall here. EmberJS is so unintuitive when it comes to creating a canvas-based painting application.</p>
+  <h2>Creating the first prototype (1 hour + 10 min.)</h2>
+  <p>I saw this YouTube video on how to create a collaborative drawing app with socket.io. I figured that you could do this with sockets, but I ultimately want to do this via a p2p protocol, but for the coding challenge and open-sourcing it, I don't think it's needed. And it already really helps to test drawing UX, to see what potential issues are.</p>
+  <p>Moreover, I still want to test whether you can track intent (dots on the screen). I feel a bit bad that I skipped that step, but upon reflection: tracking intent is a refinement step.</p>
+  <p>My first Anakin Skywalker "IT'S WORKING!" moment.</p>
+  <img src="img/doodledocs/prototype-example1.gif" style="width: 500px; height: 600px" />
+  <p>Fixing the line thickness bug (and disabling the red color when someone else draws), adding some opacity. Suddenly realizing, I sort of created a pencil.
+  <img src="img/doodledocs/prototype-example2.jpg" style="width: 500px; height: 600px" />
+  <h2>Trying to display intent (3 hours + 15 min.)</h2>
+  <p>This took so long because it was hard to figure out whether Apple pens support pointer events. They don't support it (not with the Apple pen 1 at least), and then I tried to find a way to sort of hack it together. This worked, but my hackish prototype code was getting a bit in the way. I'm happy I used a single-user app for this as a scaffold, because it was hard enough already as it is. Another reason why it took so long was because overlayed canvases don't play that nice with each other as certain properties of one canvas can interfere with the rendering of the other canvas.</p>
+  <h2>Wasting over 26 hours on AI</h2>
+  <p>I made the scope bigger because I thought it would be cool. I wanted to make an AI in which you can draw a tic tac toe boardgame, and the doodle app would then understand what the boardstate was.</p>
+  <p>This has led me into an interesting forray of my own math/programming capabilities, with as well me taking up a neural network course deeplearning.ai from Andrew Ng.</p>
+  <p>Long story short: my idea was to auto-generate tic tac toe game state boards from squares. And while I did get a whole end thanks Google Quick Draw, it ultimately was not the way to tackle the data generation issue. If you have tic tac toe boards + crosses + circles, then you still need a way to segment the board in order to infer game state, and that is a tough problem.</p>
+  <p>Me and a friend (who helps me on this) therefore decided to go another way. So the 26 hours was not totally wasted, as I learned a lot by writing a classifier by hand, and learning the basics of neural networks again. But it did take a much longer time than I thought, and compared to the overall time of the project, this time sink was *insane*.</p> 
+  <p>It was also *insanely fun*! It was so fun in fact that I lost sleep over it with excitement. It made me program worse on the next day, but ultimately, I *did* end up creating a gameboard creator that I ultimately wanted, so I am quite happy with that.</p>
+  <p>I transformed this</p>
+  <img src="img/doodledocs/square.gif" style="width: 400px; height: 400px;" />
+  <p>programmatically into this</p>
+  <img src="img/doodledocs/tictactoegameboard.png" style="width: 400px; height: 400px;" />
+  <p>The program has a lot of limitations still, but the proof of concept works :)</p>
+  <h2>I just found out that Google Jamboard exists</h2>
+  <p>How I did not find this through my original competitor analysis is beyond me. Ah well, we're too far in. So let's continue!</p>
+  <h2>Design (7 hours)</h2>
+  <p>It took me 4 hours to design the logo (don't ask me how, it did involve a lot of vector drawing, definitely for my skillset) and 3 hours to design a simple website in Sketch. My issue is that I kind of did it from scratch, that's why it took so long. I am happy that I took my inspiration of the Cookie Monster font, I believe it was called.</p>
+  <img src="img/doodledocs/artboard.png" style="width: 2200px; height: 600px" />
+  <img src="img/doodledocs/design.png" style="width: 900px; height: 600px" />
+  <h2>Productive Procrastination (2)</h2>
+  <p>I was procrastinating on using Google Slides as a web page builder and I now build my website via Google Slides. I am still going to recast it in EmberJS and RoR, because I need the practice but I wouldn't see much wrong with this for such a simple website.</p>
+  <p>I think it also brings GIF images to life, and it makes it clear how it looks with GIFs (since the Sketch file will be exported as an image, it's relatively trivial to do this).</p>
+  <h2>Implementing design of website in EmberJS (9 hours)</h2>
+  <p>how did this take so long again? I had a nav bar CSS issue that took me a long time. I implemented my own grid system that I've never done before through a tutorial. I was (re)learning the EmberJS basics and learned the <code>git commit --amend</code> command (that last thing just took 10 minutes, mostly searching for it). I'm happy with how my actual design turned out though.</p>
+  <h2>Implementing the solo drawing functionality (6 hours and 1 hour of planning/git history cleaning)</h2>
+  <p>I've noticed that EmberJS plays a bit nicer if you think in ReactJS terms and are hell-bent on creating custom components.</p>
+  <p>Reimplementing solo canvas was still mostly about learning EmberJS. I had beginner issues with: importing libraries, not being able to use global variables, canvas behaving a bit differently, routing and template rendering. In some of these cases I had a hard time to debug them. In some cases, I simply *guessed* the answer right. I hate this, because it means if I'd be a total beginner, I'd be stuck for even longer. For example, with routing in EmberJS it is apparently needed for your folder structure to reflect your routes. I did not know this and did not explicitly read it in the starter tutorial (maybe I read over it, but probably not). At one point when I exhausted all the logging options, I simply guessed that this was the case and I happened to be right. I hate this type of unexplained automagic, simply because this is steps in a project like this take up 1 or 2 hours more.</p>
+  <p>The actual reimplementation took 3 hours. That is still quite long, as it took 2.5 hours to copy/paste the code and make it play nice with EmberJS. The other time was spent on redesigning the website layout a bit (where I fiddled with routes and template rendering) in order to have a better user experience.</p>
+  <h2>Learning Ruby part 1 (13 hours)</h2>
+  <p>The first part went incredibly quick.</p>
+  <p>The second part didn't. I was tasked with creating a blog application in Sinatra and I wanted to make it look pretty. I decided to rip a template. Big mistake, ripping templates makes things a lot harder and longer. I did have a lot of fun :) </p>
+  <p>I'll now be sensible and when I do Rails, roll my own template.</p>
+  <h2>Learning Ruby part 2 (4 hours)</h2>
+  <p>While I was learning Rails, I had so many issues with Rake. I did the following on purpose: not putting data in the seed file but via the console, not creating foreign key constraints until later. I tried to roll this back, I failed so hard that eventually I simply created a seed file and did a <code>rake db:migrate:reset</code>. Not even <code>rake db:reset</code> could save me as it would load in a NO FILE migration, and I did not want to manually delete it from the database. Other than that learning Rails went pretty well.</p>
+  <p>Whew! All these self-imposed restrictions are fun! :D But they take a while.</p>
+  <h2>Generating training data (6 hours)</h2>
+  <p>I made a Codepen for this: <a target="_new" href="https://codepen.io/melvinroest/pen/WNNeBpO">https://codepen.io/melvinroest/pen/WNNeBpO (new tab)</a></p>
+  <p>I was surprised how many different things come to pass when generating a form of training data. But I did it.</p>
+  <p>This was supposed to be done a lot later on, but I wanted to take a small break from learning Rails.</p>
+  <p>This is a training example</p>
+  <img src="img/doodledocs/training example.png" style="width: 400px; height: 400px;" />
+  <p>This is with debug output on. The red dots indicate debug output on whether the board knows of its most important intersections and whether it's capable of identifying what the coordinates of its 9 spaces are.</p>
+  <img src="img/doodledocs/debug example.png" style="width: 400px; height: 400px;" />
+  <h2>Learning how to make a decentralized version (14 hours)</h2>
+  <p>I thought this would be easy, since you just paste in the IP right? It turns out, that browsers are quite tightened up with security. D'oh! I should've known. I've been learning about: WebRTC (and the whole signaling game, including having stun and turn servers). But I was mostly looking for how to get free signalling and stun servers. And I've figured out an approach, but it also led me to learn a lot of extra stuff. Basically, one can retrofit WebTorrent in order to get a WebRTC signalling server for free. I think I'm halfway done, so I'll leave it for now. Chris McCormick has done some really interesting work in this space with: Bugout, Dreamtime and Dirc. This particular <a target="_blank" href="https://news.ycombinator.com/item?id=17773180">HN discussion</a> shows the awesome trickery he pulls off.</p>
+  <p>Omg, I'm now just realizing that I needed to use his library... Ah well, at least now I know *exactly* how it works :P</p>
+  <h2>Implementing p2p message passing into Doodle Docs (8 hours)</h2>
+  <p>I'm noticing that the build errors and my JS fumbling is taking time. I'm not used to async/await, and I made a couple of wrong assumptions 😅. Now that those things are gone after 90 minutes, I hope dev time will pick up.</p>
+  <p>What took so long? Little things really. Me not being sharp as well I suppose and me searching for an Apple pencil took quite a while. I had a few silly mistakes that took me a long time to notice, but it is working now.</p>
+  <p>Another reason why it took so long is because I was trying out how to get iPad debugging to work. At first, I was stubborn using <code>alert</code>, and I tried a couple of solutions. Since then I simply settled on simply the following: plug iPad with USB onto laptop, open Safari and select the iPad dev window from there, easy peasy.</p>
+  <h2>Implementing a transmission service in EmberJS (11 hours)</h2>
+  <p>Services are new. That's why this takes so long. Also I am thinking slowly due to sleep deprivation, because I'm thinking about this project constantly.</p>
+  <p>Another reason why I was slow is because it took me long to realize two things: I was editing in the wrong text editor. Instead of doodledocs_app I needed to edit in doodledocs-app, I switched editors quite recently (VSCode).</p> 
+  <p>Another reason was: for a long time, I had the assumption that I could connect Socket.io with ActionCable. It turns out: I can't! Because Socket.io is not actually a websocket library, it simply uses websockets.</p>
+  <p>I was also relatively slow at creating a working server with Ruby, simply because my understanding of Rails and Ruby is still quite low. Put ActionCable on top of it, and you have a slow show.</p>
+  <p>With that said, I did it! I created my first prototype version of it. I actually still need to stream on all kinds of Doodle Docs, and not a global version of it, but that'll be implemented soon enough.</p>
+  <h2>Some fixes and prepping for collaboration channels (0.5 hours)</h2>
+  <p>My git commit was: fixed redirection issues with routing and created random URL generation for a doodle doc</p>
+  <p>It's nice when something works quite quickly and according to plan.</p>
+  <p>Now 'all' I need to do is fix the RoR side for this. Bugout already supports this :)</p>
+  <h2>Bug fixing and making WebRTC/P2P performant (10 hours)</h2>
+  <p>Having a lot of issues with importing a script in a Web Worker. Setting up the Web Worker has been a challenge in itself. Ember does not really play nicely in this respect. Lol, it only took 3 hours. I have an abomination of a browserfied bundle in a public folder that is required by RequireJS. Great... </p>
+  <p>After everything working, I have learned that web workers don't support WebRTC. AAARGGGHHHHH!!!! 9-83W45-87ERP$%W"^:W$%Y$WU%TEDFZ8PU934W$%%^#%$&#^#%^</p>
+  <p>I guess that sums up my thoughts.</p>
+  <p>Ah, it's the key signing of tweet NaCl that is giving me a run for my money. I'll just turn it off then :D I'm so surprised at how easy this was. If only I had a strategic mindset from the outset, I'd have solved this problem in 30 minutes. This is definitely a lesson for in the books.</p>
+  <p>Let's show a before and after (both still have palm cancellation issues though).</p>
+  <div style="display: inline-block; margin: 10px;">
+    <p><strong>Before</strong></p>
+    <video autoplay loop muted playsinline width="400" height="400" controls><source src="img/doodledocs/slow doodle.mp4" type="video/mp4"></video>
+  </div>
+  <div style="display: inline-block; margin: 10px;">
+    <p><strong>After</strong></p>
+    <video autoplay loop muted playsinline width="400" height="400" controls><source src="img/doodledocs/fast doodle.mp4" type="video/mp4"></video>
+  </div>
+  <h2>Deployment and related bug fixing (6 hours)</h2>
+  <p>It took me quite a while to understand what a production build does. I think I should've read the docs earlier? Even then... It's also that Github Pages isn't the ideal deploy target.</p>
+  <h2>Productive Procrastination (3)</h2>
+  <p>While I was technically done with deployment, I optimized a couple of things. One of the things I did was writing my deployment copy/paste script in Boostnote. I also learned that putting in a 404.html makes my routes routable on page refresh!
+
+  This is the deploy script:
+
+  <pre>
+  #Build copy/paste script
+  export TARGET="gh-pages" && 
+  ember github-pages:commit --message "Pre-commit version: $(ruby -e 'puts Time.now')" &&
+  git checkout gh-pages && 
+  cp index.html 404.html &&
+  git add 404.html &&
+  git commit -m "Full commit version: $(ruby -e 'puts Time.now')" &&
+  git push --set-upstream github gh-pages --force &&
+  git checkout @{-1}
+  </pre>
+
+  </p>
+
+
+  <script type="text/javascript" src="../custom.js"></script>  
+</body>
+</html>
